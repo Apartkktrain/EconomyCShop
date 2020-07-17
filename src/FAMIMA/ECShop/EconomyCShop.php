@@ -72,27 +72,27 @@ class EconomyCShop extends PluginBase
 	public function createChestShop($cpos, $spos, $owner, $item, $price)
 	{
 		$this->db->createChestShop($cpos->x, $cpos->y, $cpos->z, $spos->x, $spos->y, $spos->z,
-		$owner, $item->getID(), $item->getDamage(), $item->getCount(), $price, $spos->getLevel()->getName());
+		$owner, $item->getID(), $item->getDamage(), $item->getCount(), $price, $spos->level->getFolderName());
 	}
 
 	public function updateChestShopData($spos, $owner, $item, $price)
 	{
-		$this->db->updateChestShopData($spos->x, $spos->y, $spos->z, $owner, $item->getID(), $item->getDamage(), $item->getCount(), $price, $spos->getLevel()->getName());
+		$this->db->updateChestShopData($spos->x, $spos->y, $spos->z, $owner, $item->getID(), $item->getDamage(), $item->getCount(), $price, $spos->level->getFolderName());
 	}
 
 	public function isShopExists($pos)
 	{
-		return $this->db->isShopExists($pos->x, $pos->y, $pos->z, $pos->level->getName());
+		return $this->db->isShopExists($pos->x, $pos->y, $pos->z, $pos->level->getFolderName());
 	}
 
 	public function isShopChestExists($pos)
 	{
-		return $this->db->isShopChestExists($pos->x, $pos->y, $pos->z, $pos->level->getName());
+		return $this->db->isShopChestExists($pos->x, $pos->y, $pos->z, $pos->level->getFolderName());
 	}
 
 	public function getShopData($pos)
 	{
-		return $this->db->getShopData($pos->x, $pos->y, $pos->z, $pos->level->getName());
+		return $this->db->getShopData($pos->x, $pos->y, $pos->z, $pos->level->getFolderName());
 	}
 
 	public function isExistsChests($pos)
@@ -135,7 +135,7 @@ class EconomyCShop extends PluginBase
 
 	public function removeShop($pos)
 	{
-		$this->db->deleteShop($pos->x, $pos->y, $pos->z, $pos->level->getName());
+		$this->db->deleteShop($pos->x, $pos->y, $pos->z, $pos->$level->getFolderName());
 	}
 
 	public function onBuy($owner, $target, $amount)
