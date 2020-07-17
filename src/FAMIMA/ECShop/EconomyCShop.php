@@ -135,7 +135,7 @@ class EconomyCShop extends PluginBase
 
 	public function removeShop($pos)
 	{
-		$this->db->deleteShop($pos->x, $pos->y, $pos->z, $pos->$level->getFolderName());
+		$this->db->deleteShop($pos->x, $pos->y, $pos->z, $pos->level->getFolderName());
 	}
 
 	public function onBuy($owner, $target, $amount)
